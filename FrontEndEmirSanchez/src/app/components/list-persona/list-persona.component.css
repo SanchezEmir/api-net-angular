@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+.title span {
+  margin: auto;
+}
+
+
+
+td, th {
+  width: 15%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.iconos{
+  cursor: pointer;
+}
+
+

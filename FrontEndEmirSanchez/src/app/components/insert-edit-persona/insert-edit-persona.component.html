@@ -1,0 +1,64 @@
+<div class="title">
+  <mat-toolbar color="primary">
+    <span>Agregar Persona</span>
+  </mat-toolbar>
+</div>
+
+<app-spinner *ngIf="false"></app-spinner>
+
+<div class="container">
+  <mat-card class="card">
+    <mat-card-subtitle class="sub">
+      Datos de la persona
+    </mat-card-subtitle>
+    <form [formGroup]="form" (ngSubmit)="agregar()">
+      <mat-grid-list cols="2" rowHeight="80px">
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombres</mat-label>
+            <input formControlName="names" matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Primer Apellido</mat-label>
+            <input formControlName="surename" matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Segundo Apellido</mat-label>
+            <input formControlName="secondSurename" matInput>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>DNI</mat-label>
+            <input type="number" formControlName="dni" matInput>
+            <mat-error *ngIf="form.get('dni')?.hasError('pattern')">El DNI debe tener 8 dígitos</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill">
+            <mat-label>Fecha Nac.</mat-label>
+            <input matInput [matDatepicker]="dp3" formControlName="birthDate" readonly>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input formControlName="status" matInput>
+            <mat-error *ngIf="form.get('status')?.hasError('maxlength')">Solo una letra</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <button class="btn" mat-raised-button routerLink="/personas">Volver</button>
+          <button class="btn" [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Aceptar</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+.title span {
+  margin: auto;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+.sub {
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+mat-form-field{
+  width: 100%;
+  margin: 20px;
+}
+
+mat-grid-tile{
+  padding: 4px 0;
+}
+
+.btn {
+  margin: 10px
+}
