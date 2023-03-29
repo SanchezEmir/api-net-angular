@@ -54,6 +54,13 @@
             <mat-error *ngIf="form.get('status')?.hasError('maxlength')">Solo una letra</mat-error>
           </mat-form-field>
         </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="outline">
+            <mat-label>Comentarios</mat-label>
+            <input formControlName="comment" matInput>
+            <!-- <mat-error *ngIf="form.get('status')?.hasError('maxlength')">Solo una letra</mat-error> -->
+          </mat-form-field>
+        </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <button class="btn" mat-raised-button routerLink="/personas">Volver</button>
           <button class="btn" [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Aceptar</button>

@@ -27,6 +27,10 @@ public partial class EmpleadosContext : DbContext
 
             entity.ToTable("personas");
 
+            entity.Property(e => e.Comentairio)
+                .HasMaxLength(100)
+                .IsUnicode(false)
+                .HasColumnName("comentairio");
             entity.Property(e => e.Dni)
                 .HasMaxLength(8)
                 .IsUnicode(false)

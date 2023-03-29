@@ -30,7 +30,8 @@ export class InsertEditPersonaComponent implements OnInit {
       secondSurename: ['', Validators.required],
       dni: ['', [Validators.required, Validators.pattern('^[0-9]{8}$')]],
       birthDate: ['', Validators.required],
-      status: ['', [Validators.required, Validators.maxLength(1)]]
+      status: ['', [Validators.required, Validators.maxLength(1)]],
+      comment: ['', Validators.required]
     });
   }
 
@@ -49,7 +50,8 @@ export class InsertEditPersonaComponent implements OnInit {
       segundoApellido: this.form.value.secondSurename,
       dni: this.form.value.dni.toString(),
       fechaNacimiento: fechaSeleccionada,
-      estado: this.form.value.status.toUpperCase()
+      estado: this.form.value.status.toUpperCase(),
+      comentairio: this.form.value.comment
     }
 
     this._service.insertarPersona(persona).subscribe(

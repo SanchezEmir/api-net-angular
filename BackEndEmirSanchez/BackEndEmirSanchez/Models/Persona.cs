@@ -18,4 +18,6 @@ public partial class Persona
     public DateTime? FechaNacimiento { get; set; }
 
     public string? Estado { get; set; }
+
+    public string? Comentairio { get; set; }
 }

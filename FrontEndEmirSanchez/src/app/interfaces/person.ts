@@ -6,4 +6,5 @@ export interface Person {
   dni: string;
   fechaNacimiento: Date;
   estado: string;
+  comentairio?: string;
 }

@@ -12,7 +12,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 })
 export class ListPersonaComponent implements OnInit, AfterViewInit{
 
-  displayedColumns: string[] = ['names', 'surname', 'secondSurname', 'dni', 'birthDate', 'status', 'acciones'];
+  displayedColumns: string[] = ['names', 'surname', 'secondSurname', 'dni', 'birthDate', 'status','comentairio', 'acciones'];
   dataSource = new MatTableDataSource<Person>();
   loading: boolean = false;
 
